@@ -3,7 +3,6 @@ unit Escola.Telefone.Teste;
 interface
 
 uses
-   System.SysUtils,
    DUnitX.TestFramework,
    Escola.Telefone,
    Escola.Telefone.Excecao;
@@ -69,7 +68,8 @@ var aTelefone : TTelefone;
 begin
    aTelefone := TTelefone.Create(pDDD, pNumero);
    try
-      Assert.AreEqual(Format('(%s)%s', [pDDD, pNumero]), aTelefone.ValorFormatado);
+      Assert.AreEqual(aTelefone.DDD, pDDD);
+      Assert.AreEqual(aTelefone.Numero, pNumero);
    finally
       aTelefone.Destroy;
    end;

@@ -12,7 +12,6 @@ type
    private
       FDDD: String;
       FNumero: String;
-    function ObterTelefoneFormatado: String;
       const EXPRESSAO_REGULAR_DDD = '^\d{2}$';
       const EXPRESSAO_REGULAR_NUMERO = '^\d{8,9}$';
       procedure Validar;
@@ -22,7 +21,6 @@ type
       constructor Create(pDDD, pNumero : String);
       property DDD: String read FDDD;
       property Numero: String read FNumero;
-      property ValorFormatado: String read ObterTelefoneFormatado;
    end;
 
 implementation
@@ -34,11 +32,6 @@ begin
    FDDD    := pDDD;
    FNumero := pNumero;
    Validar;
-end;
-
-function TTelefone.ObterTelefoneFormatado: String;
-begin
-   Result := Format('(%s)%s', [FDDD, FNumero]);
 end;
 
 procedure TTelefone.Validar;

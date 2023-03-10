@@ -6,7 +6,8 @@ uses
    System.Generics.Collections,
    Escola.Email,
    Escola.CPF,
-   Escola.Telefone;
+   Escola.Telefone,
+   Escola.Aluno.Dado;
 
 type
    TAluno = class
@@ -16,12 +17,12 @@ type
       FEmail: TEmail;
       FListaTelefone: TObjectList<TTelefone>;
    public
-      constructor Create;
+      constructor Create(pDado : TAlunoDado); reintroduce;
       destructor Destroy; override;
       procedure AdicionarTelefone(pDDD, pNumero : String);
-      property CPF: TCPF read FCPF write FCPF;
-      property Nome: String read FNome write FNome;
-      property Email: TEmail read FEmail write FEmail;
+      property CPF: TCPF read FCPF;
+      property Nome: String read FNome;
+      property Email: TEmail read FEmail;
 //      property ListaTelefone: TObjectList<TTelefone> read FListaTelefone write FListaTelefone;
    end;
 
@@ -29,14 +30,19 @@ implementation
 
 { TAluno }
 
-constructor TAluno.Create;
+constructor TAluno.Create(pDado : TAlunoDado);
 begin
+   FCPF := TCPF.Create(pDado.CPF);
+   FEmail := TEmail.Create(pDado.Email);
    FListaTelefone := TObjectList<TTelefone>.Create;
+   FNome := pDado.Nome;
 end;
 
 destructor TAluno.Destroy;
 begin
    FListaTelefone.Destroy;
+   FEmail.Destroy;
+   FCPF.Destroy;
    inherited;
 end;
 
