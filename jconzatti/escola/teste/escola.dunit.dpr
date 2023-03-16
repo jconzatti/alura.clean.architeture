@@ -11,15 +11,15 @@ uses
   DUnitX.Loggers.Console,
   DUnitX.Loggers.Xml.NUnit,
   DUnitX.TestFramework,
-  Escola.Email.Teste in 'Escola.Email.Teste.pas',
-  Escola.Email.Excecao in '..\Escola.Email.Excecao.pas',
-  Escola.Email in '..\Escola.Email.pas',
-  Escola.Telefone.Excecao in '..\Escola.Telefone.Excecao.pas',
-  Escola.Telefone in '..\Escola.Telefone.pas',
-  Escola.Telefone.Teste in 'Escola.Telefone.Teste.pas',
-  Escola.CPF.Excecao in '..\Escola.CPF.Excecao.pas',
-  Escola.CPF in '..\Escola.CPF.pas',
-  Escola.CPF.Teste in 'Escola.CPF.Teste.pas';
+  Escola.CPF.Teste in 'dominio\aluno\Escola.CPF.Teste.pas',
+  Escola.Email.Teste in 'dominio\aluno\Escola.Email.Teste.pas',
+  Escola.Telefone.Teste in 'dominio\aluno\Escola.Telefone.Teste.pas',
+  Escola.CPF.Excecao in '..\fonte\dominio\aluno\Escola.CPF.Excecao.pas',
+  Escola.CPF in '..\fonte\dominio\aluno\Escola.CPF.pas',
+  Escola.Email.Excecao in '..\fonte\dominio\aluno\Escola.Email.Excecao.pas',
+  Escola.Email in '..\fonte\dominio\aluno\Escola.Email.pas',
+  Escola.Telefone.Excecao in '..\fonte\dominio\aluno\Escola.Telefone.Excecao.pas',
+  Escola.Telefone in '..\fonte\dominio\aluno\Escola.Telefone.pas';
 
 var
   runner : ITestRunner;

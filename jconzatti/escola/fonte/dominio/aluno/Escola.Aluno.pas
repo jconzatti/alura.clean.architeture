@@ -23,7 +23,7 @@ type
       property CPF: TCPF read FCPF;
       property Nome: String read FNome;
       property Email: TEmail read FEmail;
-//      property ListaTelefone: TObjectList<TTelefone> read FListaTelefone write FListaTelefone;
+      property ListaTelefone : TObjectList<TTelefone> read FListaTelefone;
    end;
 
 implementation
@@ -40,9 +40,15 @@ end;
 
 destructor TAluno.Destroy;
 begin
-   FListaTelefone.Destroy;
-   FEmail.Destroy;
-   FCPF.Destroy;
+   if Assigned(FListaTelefone) then
+      FListaTelefone.Destroy;
+
+   if Assigned(FEmail) then
+      FEmail.Destroy;
+
+   if Assigned(FCPF) then
+      FCPF.Destroy;
+
    inherited;
 end;
 

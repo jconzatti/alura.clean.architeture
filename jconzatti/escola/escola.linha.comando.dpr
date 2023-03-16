@@ -6,25 +6,33 @@ program escola.linha.comando;
 
 uses
   System.SysUtils,
-  Escola.Aluno in 'Escola.Aluno.pas',
-  Escola.Email in 'Escola.Email.pas',
-  Escola.Email.Excecao in 'Escola.Email.Excecao.pas',
-  Escola.CPF in 'Escola.CPF.pas',
-  Escola.CPF.Excecao in 'Escola.CPF.Excecao.pas',
-  Escola.Telefone in 'Escola.Telefone.pas',
-  Escola.Telefone.Excecao in 'Escola.Telefone.Excecao.pas',
-  Escola.Indicacao in 'Escola.Indicacao.pas',
-  Escola.Aluno.Dado in 'Escola.Aluno.Dado.pas';
+  System.Classes,
+  Escola.Aluno.Dado in 'fonte\dominio\aluno\Escola.Aluno.Dado.pas',
+  Escola.Aluno in 'fonte\dominio\aluno\Escola.Aluno.pas',
+  Escola.CPF.Excecao in 'fonte\dominio\aluno\Escola.CPF.Excecao.pas',
+  Escola.CPF in 'fonte\dominio\aluno\Escola.CPF.pas',
+  Escola.Email.Excecao in 'fonte\dominio\aluno\Escola.Email.Excecao.pas',
+  Escola.Email in 'fonte\dominio\aluno\Escola.Email.pas',
+  Escola.Telefone.Excecao in 'fonte\dominio\aluno\Escola.Telefone.Excecao.pas',
+  Escola.Telefone in 'fonte\dominio\aluno\Escola.Telefone.pas',
+  Escola.Indicacao in 'fonte\dominio\indicacao\Escola.Indicacao.pas',
+  Escola.Aluno.Repositorio in 'fonte\dominio\aluno\Escola.Aluno.Repositorio.pas',
+  Escola.Aluno.Repositorio.FireDAC in 'fonte\infra\aluno\Escola.Aluno.Repositorio.FireDAC.pas';
 
 var aAluno : TAluno;
     aAlunoDado : TAlunoDado;
 begin
-   ReportMemoryLeaksOnShutdown := True;
    try
       aAlunoDado.Nome := 'Jhoni Conatti';
       aAlunoDado.CPF  := '066.829.429-90';
       aAlunoDado.Email:= 'jhoni.conzatti@gmail.com';
       aAluno := TAluno.Create(aAlunoDado);
+      try
+         aAluno.AdicionarTelefone('47', '984577792');
+         aAluno.AdicionarTelefone('47', '30355707');
+      finally
+         aAluno.Destroy;
+      end;
    except
       on E: Exception do
          Writeln(E.ClassName, ': ', E.Message);

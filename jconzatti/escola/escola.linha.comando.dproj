@@ -132,15 +132,17 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="Escola.Aluno.pas"/>
-        <DCCReference Include="Escola.Email.pas"/>
-        <DCCReference Include="Escola.Email.Excecao.pas"/>
-        <DCCReference Include="Escola.CPF.pas"/>
-        <DCCReference Include="Escola.CPF.Excecao.pas"/>
-        <DCCReference Include="Escola.Telefone.pas"/>
-        <DCCReference Include="Escola.Telefone.Excecao.pas"/>
-        <DCCReference Include="Escola.Indicacao.pas"/>
-        <DCCReference Include="Escola.Aluno.Dado.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.Aluno.Dado.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.Aluno.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.CPF.Excecao.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.CPF.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.Email.Excecao.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.Email.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.Telefone.Excecao.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.Telefone.pas"/>
+        <DCCReference Include="fonte\dominio\indicacao\Escola.Indicacao.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.Aluno.Repositorio.pas"/>
+        <DCCReference Include="fonte\infra\aluno\Escola.Aluno.Repositorio.FireDAC.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
