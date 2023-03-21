@@ -21,21 +21,26 @@ uses
   Escola.Aluno.Repositorio.Excecao in 'fonte\dominio\aluno\Escola.Aluno.Repositorio.Excecao.pas',
   Escola.Aluno.Repositorio.Memoria in 'fonte\infra\aluno\Escola.Aluno.Repositorio.Memoria.pas',
   Escola.Senha.Cifrador in 'fonte\dominio\aluno\Escola.Senha.Cifrador.pas',
-  Escola.Senha.Cifrador.SHA256.Indy in 'fonte\infra\aluno\Escola.Senha.Cifrador.SHA256.Indy.pas';
+  Escola.Senha.Cifrador.SHA256.Indy in 'fonte\infra\aluno\Escola.Senha.Cifrador.SHA256.Indy.pas',
+  Escola.Indicacao.Enviador.Email in 'fonte\aplicacao\indicacao\Escola.Indicacao.Enviador.Email.pas',
+  Escola.Indicacao.Enviador.Email.SMTP.Indy in 'fonte\infra\indicacao\Escola.Indicacao.Enviador.Email.SMTP.Indy.pas',
+  Escola.Aluno.Matriculador in 'fonte\aplicacao\aluno\Escola.Aluno.Matriculador.pas',
+  Escola.Aluno.Matriculador.Apresentacao.LinhaComando in 'fonte\infra\aluno\Escola.Aluno.Matriculador.Apresentacao.LinhaComando.pas';
 
-var aAluno : TAluno;
-    aAlunoDado : TAlunoDado;
+var lAlunoRepositorioMemoria : TAlunoRepositorioMemoria;
+    lAlunoMatriculadorApresentacaoLinhaComando : TAlunoMatriculadorApresentacaoLinhaComando;
 begin
    try
-      aAlunoDado.Nome := 'Jhoni Conatti';
-      aAlunoDado.CPF  := '066.829.429-90';
-      aAlunoDado.Email:= 'jhoni.conzatti@gmail.com';
-      aAluno := TAluno.Create(aAlunoDado);
+      lAlunoRepositorioMemoria := TAlunoRepositorioMemoria.Create;
       try
-         aAluno.AdicionarTelefone('47', '984577792');
-         aAluno.AdicionarTelefone('47', '30355707');
+         lAlunoMatriculadorApresentacaoLinhaComando := TAlunoMatriculadorApresentacaoLinhaComando.Create(lAlunoRepositorioMemoria);
+         try
+            lAlunoMatriculadorApresentacaoLinhaComando.Matricular;
+         finally
+            lAlunoMatriculadorApresentacaoLinhaComando.Destroy;
+         end;
       finally
-         aAluno.Destroy;
+         lAlunoRepositorioMemoria.Destroy;
       end;
    except
       on E: Exception do

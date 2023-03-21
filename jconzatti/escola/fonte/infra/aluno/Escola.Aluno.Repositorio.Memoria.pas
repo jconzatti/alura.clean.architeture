@@ -39,9 +39,13 @@ begin
 end;
 
 procedure TAlunoRepositorioMemoria.Matricular(pAluno: TAluno);
+var lAlunoDado: TAlunoDado;
 begin
    inherited;
-   FListaAluno.Add(pAluno);
+   lAlunoDado.Nome  := pAluno.Nome;
+   lAlunoDado.CPF   := pAluno.CPF.Valor;
+   lAlunoDado.Email := pAluno.Email.Valor;
+   FListaAluno.Add(TAluno.Create(lAlunoDado));
 end;
 
 function TAlunoRepositorioMemoria.BuscarPorCPF(pCPF: TCPF): TAluno;
