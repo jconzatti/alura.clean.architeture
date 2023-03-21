@@ -25,7 +25,7 @@ type
       property Nome: String read FNome;
       property Email: TEmail read FEmail;
       property ListaTelefone : TObjectList<TTelefone> read FListaTelefone;
-      //property Senha: String read FSenha write FSenha;
+      property Senha: String read FSenha write FSenha;
    end;
 
 implementation
