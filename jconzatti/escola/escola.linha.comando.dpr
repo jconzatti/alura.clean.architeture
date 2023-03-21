@@ -17,7 +17,11 @@ uses
   Escola.Telefone in 'fonte\dominio\aluno\Escola.Telefone.pas',
   Escola.Indicacao in 'fonte\dominio\indicacao\Escola.Indicacao.pas',
   Escola.Aluno.Repositorio in 'fonte\dominio\aluno\Escola.Aluno.Repositorio.pas',
-  Escola.Aluno.Repositorio.FireDAC in 'fonte\infra\aluno\Escola.Aluno.Repositorio.FireDAC.pas';
+  Escola.Aluno.Repositorio.FireDAC in 'fonte\infra\aluno\Escola.Aluno.Repositorio.FireDAC.pas',
+  Escola.Aluno.Repositorio.Excecao in 'fonte\dominio\aluno\Escola.Aluno.Repositorio.Excecao.pas',
+  Escola.Aluno.Repositorio.Memoria in 'fonte\infra\aluno\Escola.Aluno.Repositorio.Memoria.pas',
+  Escola.Senha.Cifrador in 'fonte\dominio\aluno\Escola.Senha.Cifrador.pas',
+  Escola.Senha.Cifrador.SHA256.Indy in 'fonte\infra\aluno\Escola.Senha.Cifrador.SHA256.Indy.pas';
 
 var aAluno : TAluno;
     aAlunoDado : TAlunoDado;

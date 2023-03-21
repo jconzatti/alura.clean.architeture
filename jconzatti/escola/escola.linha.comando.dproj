@@ -143,6 +143,10 @@
         <DCCReference Include="fonte\dominio\indicacao\Escola.Indicacao.pas"/>
         <DCCReference Include="fonte\dominio\aluno\Escola.Aluno.Repositorio.pas"/>
         <DCCReference Include="fonte\infra\aluno\Escola.Aluno.Repositorio.FireDAC.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.Aluno.Repositorio.Excecao.pas"/>
+        <DCCReference Include="fonte\infra\aluno\Escola.Aluno.Repositorio.Memoria.pas"/>
+        <DCCReference Include="fonte\dominio\aluno\Escola.Senha.Cifrador.pas"/>
+        <DCCReference Include="fonte\infra\aluno\Escola.Senha.Cifrador.SHA256.Indy.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
