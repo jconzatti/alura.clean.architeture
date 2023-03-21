@@ -16,6 +16,7 @@ type
       FNome: String;
       FEmail: TEmail;
       FListaTelefone: TObjectList<TTelefone>;
+      FSenha: String;
    public
       constructor Create(pDado : TAlunoDado); reintroduce;
       destructor Destroy; override;
@@ -24,6 +25,7 @@ type
       property Nome: String read FNome;
       property Email: TEmail read FEmail;
       property ListaTelefone : TObjectList<TTelefone> read FListaTelefone;
+      //property Senha: String read FSenha write FSenha;
    end;
 
 implementation
