@@ -45,7 +45,7 @@ begin
       FIdSMTP.Host           := 'smtp.gmail.com';
       FIdSMTP.Port           := 465;
       FIdSMTP.Username       := 'jhoni.conzatti@gmail.com';
-      FIdSMTP.Password       := 'zxrdiqtdsatrhcti';
+      FIdSMTP.Password       := 'minha-senha';
       FIdSMTP.ConnectTimeout := 30000;
       FIdSMTP.ReadTimeout    := 30000;
 
